@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple UI</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <!-- Using Font Awesome -->
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0c29;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Main Section */
+    #main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    /* Logo */
+    .logo {
+      width: 80px;
+      cursor: pointer;
+    }
+
+    /* Menu Bar Icon */
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      width: 28px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      margin: 6px 0;
+    }
+
+    /* Menu */
+    .menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .menu li {
+      margin-right: 20px;
+    }
+
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 20px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      background: #fff;
+      color: #302b63;
+    }
+
+    /* Main Box */
+    .main-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 2rem;
+    }
+
+    /* Text */
+    .text {
+      width: 50%;
+      color: #fff;
+    }
+
+    .text span {
+      font-size: 36px;
+      font-weight: bold;
+      color: #302b63;
+    }
+
+    .text h2 {
+      font-size: 64px;
+      margin: 20px 0;
+    }
+
+    .text p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 36px;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #302b63;
+    }
+
+    /* Image */
+    .img {
+      width: 50%;
+    }
+
+    .img img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    /* Social */
+    .social {
+      list-style: none;
+      display: flex;
+    }
+
+    .social li {
+      margin-right: 10px;
+    }
+
+    .social li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .social li a:hover {
+      color: #302b63;
+    }
+
+    /* Copy-right */
+    .copy-right {
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      /* Navigation */
+      nav {
+        padding: 1rem;
+      }
+
+      /* Menu Bar Icon */
+      .menu-icon {
+        display: block;
+      }
+
+      /* Menu */
+      .menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #0f0c29;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.5s ease;
+      }
+
+      .menu.active {
+        left: 0;
+      }
+
+      .menu li {
+        margin: 10px 0;
+      }
+
+      .menu li a {
+        font-size: 24px;
+        margin: 10px 0;
+      }
+
+      /* Main Box */
+      .main-box {
+        flex-direction: column;
+        padding: 0 1rem;
+      }
+
+      /* Text */
+      .text {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Image */
+      .img {
+        width: 100%;
+        margin-top: 50px;
+      }
+
+      /* Footer */
+      footer {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      /* Social */
+      .social {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Section -->
+  <section id="main">
+    <!-- Navigation -->
+    <nav>
+      <!-- Logo -->
+      <!-- <a href="#" class="logo"><img src="logo.png" alt="logo"></a> -->
+      <!-- Menu Bar Icon -->
+      <div class="menu-icon"><span></span><span></span><span></span></div>
+      <!-- Menu -->
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </nav>
+    <!-- Main Box -->
+    <div class="main-box">
+      <!-- Text -->
+      <div class="text">
+        <span><font>We Do </font>What You Want</span>
+        <h2>User Interface</h2>
+        <p>Minimal And Beautiful User Interface For Your Upcoming Projects.</p>
+        <!-- Button -->
+        <a href="#" class="btn">Our Work</a>
+      </div>
+      <!-- Image -->
+      <!-- <div class="img">
+        <img src="" alt="interface">
+      </div> -->
+    </div>
+    <!-- Footer -->
+    <footer>
+      <!-- Social -->
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <!-- Copy-right -->
+      <p class="copy-right">© 2023 All Rights Reserved.</p>
+    </footer>
+  </section>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    $(document).ready(function() {
+      // toggle menu
+      $(".menu-icon").click(function() {
+        $(".menu").toggleClass("active");
+        $("body").toggleClass("blur");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause</title>
+    <style>
+        /*
+        * CSS for the Craving Stopper Page
+        * A plain, clean black background with centered text.
+        */
+        :root {
+            /* Define main colors as CSS variables for easy changes */
+            --main-text-color: #FFFFFF;
+            --secondary-text-color: #AAAAAA; /* Faded grey */
+            --background-color: #000000;
+        }
+
+        /* --- Global Reset and Body Styling --- */
+        body {
+            background-color: var(--background-color);
+            color: var(--main-text-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* A clean, minimalist font */
+            margin: 0;
+            display: flex; /* Use Flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure it takes up the full viewport height */
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* --- Main Content Container --- */
+        .container {
+            /* Flex column layout to stack the two text elements */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Space between the main sentence and the faded text */
+            padding: 20px;
+        }
+
+        /* --- Main Sentence Styling --- */
+        .main-sentence {
+            font-size: 3.5vw; /* Responsive font size */
+            font-weight: 700; /* Bold and impactful */
+            line-height: 1.2;
+            letter-spacing: 1px;
+            /* Ensure text is visible even on small screens */
+            min-font-size: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .main-sentence {
+                font-size: 8vw; /* Larger font on small screens */
+            }
+        }
+
+        /* --- Faded Secondary Text Styling --- */
+        .subtle-line {
+            font-size: 1.1em;
+            font-weight: 300; /* Light and subtle */
+            color: var(--secondary-text-color);
+            opacity: 0; /* Starts completely invisible */
+            transition: opacity 2s ease-in-out; /* Smooth 2-second fade-in effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-sentence">
+            This isn’t what you really want.
+        </h1>
+
+        <p id="subtleText" class="subtle-line">
+            Close this tab. Breathe. Get back to your mission.
+        </p>
+    </div>
+
+    <script>
+        /*
+        * JavaScript for the Subtle Fade-In Effect
+        * This provides a moment for the main sentence to register before the secondary text appears.
+        */
+        window.onload = function() {
+            // Get the element by its ID
+            const subtleText = document.getElementById('subtleText');
+
+            // Wait 1.5 seconds (1500 milliseconds) before starting the fade-in
+            setTimeout(() => {
+                // By changing the opacity, the CSS transition takes over and smoothly fades it in
+                subtleText.style.opacity = '1';
+            }, 1500);
+        };
+    </script>
+
+</body>
+</html>
